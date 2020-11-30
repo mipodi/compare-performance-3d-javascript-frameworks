@@ -9,10 +9,10 @@ const requestAnimationPromise = () => {
           resolve(timestmp)
       })
   })
-}
+};
 
 
-function runFpsLoop() {
+async function runFpsLoop() {
     var lastTime = performance.now();
     var frame = 0;
 
@@ -44,7 +44,7 @@ function runFpsLoop() {
         await requestAnimationPromise().then(loop);
         console.log("hej");
     }
-    loop(0);
+    await loop(0);
 }
 
-runFpsLoop();
+await runFpsLoop();

@@ -1,0 +1,21 @@
+{
+  "name": "perf-three-light",
+  "version": "1.0.0",
+  "description": "Light installation for testing performance.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "three": "^0.123.0"
+  }
+}
