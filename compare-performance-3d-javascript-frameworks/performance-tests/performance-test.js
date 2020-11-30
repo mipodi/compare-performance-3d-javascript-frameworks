@@ -3,12 +3,11 @@ var fps = 0;
 
 
 
-const readFilePromise = (...args) => {
-  return new Promise((resolve, reject) => {
-    fs.readFile(...args, (err, data) => {
-      if (err) return reject(err)
-      resolve(data)
-    })
+const requestAnimationPromise = () => {
+  return new Promise((resolve) => {
+      window.requestAnimationFrame((timestmp) => {
+          resolve(timestmp)
+      })
   })
 }
 
@@ -23,7 +22,7 @@ function runFpsLoop() {
 
     var start = performance.now();
 
-    var loop = function(time) {
+    var loop = async function(time) {
         var now =  performance.now();
         var fs = (now - lastFrameTime);
         lastFrameTime = now;
@@ -42,7 +41,7 @@ function runFpsLoop() {
         if (now - start > 10000) {
             return fps_arr;
         }
-        window.requestAnimationFrame(loop);
+        await requestAnimationPromise().then(loop);
         console.log("hej");
     }
     loop(0);
