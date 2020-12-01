@@ -7,7 +7,7 @@
 
 const puppeteer = require('puppeteer');
 const fs = require('fs');
-const url = '';
+const url = 'https://modest-curran-4f504d.netlify.app/';
 
 (async () => {
   const browser = await puppeteer.launch();
