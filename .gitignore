@@ -1,4 +1,6 @@
 .DS_Store
-
 node_modules/
 dist/
+trace-screenshot-0.png
+trace-screenshot-1.png
+trace.json
