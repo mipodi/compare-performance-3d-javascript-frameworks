@@ -1,10 +1,10 @@
 const path = require("path");
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/index.ts',
     output: {
-        filename: 'index.js',
+        filename: 'index.min.js',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
