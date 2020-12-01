@@ -14,7 +14,7 @@ const url = 'https://modest-curran-4f504d.netlify.app/';
   const page = await browser.newPage();
 
   await page.tracing.start({ screenshots: true, path: 'trace.json' });
-  await page.goto(url, { timeout: 60000 });
+  await page.goto(url, { timeout: 6000 });
   await page.tracing.stop();
 
   // Extract data from the trace
