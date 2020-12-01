@@ -1,5 +1,7 @@
 const path = require("path");
+
 module.exports = {
+    mode: 'production',
     entry: './src/index.ts',
     output: {
         filename: 'index.js',
@@ -13,5 +15,4 @@ module.exports = {
             { test: /\.tsx?$/, loader: "ts-loader" }
         ]
     },
-    mode: "production"
-};
+}
