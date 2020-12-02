@@ -5,8 +5,8 @@
 import { Engine } from "@babylonjs/core/Engines/engine";
 import { Scene } from "@babylonjs/core/scene";
 import { Vector3 } from "@babylonjs/core/Maths/math";
-import { FreeCamera } from "@babylonjs/core/Cameras/freeCamera";
-// import { ArcRotateCamera } from "@babylonjs/core/Cameras/arcRotateCamera";
+// import { FreeCamera } from "@babylonjs/core/Cameras/freeCamera";
+import { ArcRotateCamera } from "@babylonjs/core/Cameras/arcRotateCamera";
 import { HemisphericLight } from "@babylonjs/core/Lights/hemisphericLight";
 import { Mesh } from "@babylonjs/core/Meshes/mesh";
 // import { GridMaterial } from "@babylonjs/materials/grid";
@@ -30,11 +30,18 @@ var canvas: any = document.getElementById("renderCanvas");
 var engine: Engine = new Engine(canvas, true);
 function createScene(): Scene {
     var scene: Scene = new Scene(engine);
-    // var camera: ArcRotateCamera = new ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, Vector3.Zero(), scene);
-    var camera: FreeCamera = new FreeCamera("Camera", Math.PI / 2, Math.PI / 2, 2, Vector3.Zero(), scene);
+    var camera: ArcRotateCamera = new ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 2, 2, Vector3.Zero(), scene);
 
+
+    // This attaches the camera to the canvas
     camera.attachControl(canvas, true);
 
+     // This creates and positions a free camera (non-mesh)
+    // var camera: FreeCamera = new FreeCamera("camera1", new Vector3(0, 5, -10), scene);
+    // // This targets the camera to scene origin
+    // camera.setTarget(Vector3.Zero());
+    // // This attaches the camera to the canvas
+    // camera.attachControl(canvas, true);
 
 
     var light1: HemisphericLight = new HemisphericLight("light1", new Vector3(1, 1, 0), scene);
