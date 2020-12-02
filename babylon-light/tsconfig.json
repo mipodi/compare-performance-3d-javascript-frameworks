@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
         "target": "es5",
-        "module": "commonjs",
+        "module": "esNext",
+        "moduleResolution": "node",
         "noResolve": false,
         "noImplicitAny": false,
         "removeComments": true,

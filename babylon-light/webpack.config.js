@@ -12,11 +12,20 @@ module.exports = {
       maxAssetSize: 1024000
     },
     resolve: {
-      extensions: [".ts"]
+      extensions: [ '.tsx', '.ts', '.js' ],
     },
     module: {
       rules: [
-          { test: /\.tsx?$/, loader: "ts-loader" }
-      ]
+          {
+              test: /\.tsx?$/,
+              loader: "ts-loader",
+              exclude: /node_modules/
+          },
+      ],
     },
+    devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      hot: true
+    }
 }
