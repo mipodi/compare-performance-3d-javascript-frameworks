@@ -4,6 +4,7 @@ using Chrome webdrivers in headless mode
 run with 'python3 performance-test.py'
 """
 import time
+from datetime import datetime
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
@@ -24,8 +25,14 @@ def javascript():
 chrome_options = Options()
 chrome_options.headless = True
 chrome_options.add_argument('--start-maximized')
+chrome_options.add_argument('--disable-extensions')
+chrome_options.add_argument('--experimental-web-platform-features')
+chrome_options.add_argument("--enable-blink-features='ForceEagerMeasureMemory'")
 
-hyperlink = "https://modest-curran-4f504d.netlify.app/"
+# hyperlink = "https://three-light.netlify.app/"
+hyperlink = "https://babylon-light.netlify.app/"
+
+
 
 browser = webdriver.Chrome(options=chrome_options)
 browser.get(hyperlink)
@@ -42,9 +49,12 @@ fps_arr = browser.execute_script("return window.fps_arr")
 backend_performance_calc = response_start - navigation_start
 frontend_performance_calc = dom_complete - response_start
 
-# print("navigation_start: %s" % navigation_start) # timestamp
-# print("response_start: %s" % response_start) # timestamp
-# print("dom_complete: %s" % dom_complete) # timestamp
+dateTimeObj = datetime.now()
+timestampStr = dateTimeObj.strftime("%d-%b-%Y (%H:%M:%S.%f)")
+print('Current Timestamp : ', timestampStr)
+print("navigation_start: %s" % navigation_start) # timestamp
+print("response_start: %s" % response_start) # timestamp
+print("dom_complete: %s" % dom_complete) # timestamp
 print("Back End: %s" % backend_performance_calc)
 print("Front End: %s" % frontend_performance_calc)
 print("Total js heap size: %s" % memory) # Kolla upp exakt mått
