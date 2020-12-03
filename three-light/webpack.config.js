@@ -12,7 +12,7 @@ module.exports = {
     maxAssetSize: 1024000
   },
   devServer: {
-    publicPath: '/public/',
+    publicPath: '/dist/',
     compress: true,
     port: 9000,
     hot: true,

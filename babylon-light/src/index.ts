@@ -18,9 +18,9 @@ import "@babylonjs/core/Meshes/meshBuilder";
 // Side-effects only imports allowing the standard material to be used as default.
 import "@babylonjs/core/Materials/standardMaterial";
 // Side-effects only imports allowing Mesh to create default shapes (to enhance tree shaking, the construction methods on mesh are not available if the meshbuilder has not been imported).
-import "@babylonjs/core/Meshes/Builders/sphereBuilder";
-import "@babylonjs/core/Meshes/Builders/boxBuilder";
-import "@babylonjs/core/Meshes/Builders/groundBuilder";
+// import "@babylonjs/core/Meshes/Builders/sphereBuilder";
+// import "@babylonjs/core/Meshes/Builders/boxBuilder";
+// import "@babylonjs/core/Meshes/Builders/groundBuilder";
 
 
 
